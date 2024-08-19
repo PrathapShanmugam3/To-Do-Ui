@@ -12,6 +12,8 @@ import { DeleteByIdComponent } from './delete-by-id/delete-by-id.component';
 import { UpdateComponent } from './update/update.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +31,7 @@ import { DatePipe } from '@angular/common';
     HttpClientModule,
     ReactiveFormsModule 
   ],
-  providers: [DatePipe],
+  providers: [DatePipe,{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
