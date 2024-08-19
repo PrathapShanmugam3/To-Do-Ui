@@ -23,13 +23,13 @@ id:string;
  
 ngOnInit(): void {
   this.id = this.act.snapshot.params['id'];
-  console.log(this.id);
+
   this.GetById();
 }
 
 GetById() {
   this.ser.getByid(this.id).subscribe((res) => {
-    console.log(res);
+ 
     this.FormOne.patchValue(res);
   });
 } 

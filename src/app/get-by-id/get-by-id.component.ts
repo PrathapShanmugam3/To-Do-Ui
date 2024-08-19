@@ -17,14 +17,13 @@ id:string;
 
 ngOnInit(): void {
   this.id = this.act.snapshot.params['id'];
-  console.log(this.id);
+ 
   this.getById();
 }
 
 getById() {
   this.ser.getByid(this.id).subscribe((res) => {
     this.list = res as List;
-    console.log(this.list);
   });
 }
 
