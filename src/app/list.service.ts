@@ -10,7 +10,9 @@ export class ListService {
 
   constructor(private http:HttpClient) { }
 
-  baseUrl='http://localhost:3000/'
+  baseUrl='https://to-do-api-vsii.onrender.com/'
+
+  
 
   getAll():Observable<List[]> {
     return this.http.get<List[]>(`${this.baseUrl}getAll`);
