@@ -1,35 +1,33 @@
 <div class="container">
-    <div class="header">
-        <div class="col-5 h1" style="margin-left: 350px;">𝓣𝓸 𝓓𝓸 𝓛𝓲𝓼𝓽</div>
+    <div class="row justify-content-center my-3">
+        <div class="col-12 text-center">
+            <h1 class="h1">𝓣𝓸 𝓓𝓸 𝓛𝓲𝓼𝓽</h1>
+        </div>
     </div>
 
-    <div class="add-button">
-        <button (click)="post()" class="btn btn-secondary"> ➤ Add Task </button>
+    <div class="row justify-content-center my-3">
+        <div class="col-12 col-md-6 col-lg-4 text-center">
+            <button (click)="post()" class="btn btn-secondary w-100 mb-3">➤ Add Task</button>
+        </div>
     </div>
 
-    <div class="card-container">
-        <div *ngFor="let l of list" class="card">
-            <div class="card-body">
-                <p class="card-text">{{ l.description }}</p>
-                <div style="text-align: right;">
-                    <p class="card-text">{{ l.date }}</p>
-                   
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+            <div class="card-container">
+                <div *ngFor="let l of list" class="card mb-3">
+                    <div class="card-body">
+                        <p class="card-text">{{ l.description }}</p>
+                        <div class="text-end">
+                            <p class="card-text">{{ l.date }}</p>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex flex-wrap justify-content-between">
+                        <button (click)="getById(l._id)" class="btn btn-primary btn-sm mb-2 me-2 flex-grow-1">Show</button>
+                        <button (click)="update(l._id)" class="btn btn-warning btn-sm mb-2 me-2 flex-grow-1">Update</button>
+                        <button (click)="deleteid(l._id)" class="btn btn-danger btn-sm mb-2 flex-grow-1">Delete</button>
+                    </div>
                 </div>
-            </div>
-            <div class="card-footer">
-                <button (click)="getById(l._id)" class="btn btn-list">Show</button>
-                <button (click)="update(l._id)" class="btn btn-update">Update</button>
-                <button (click)="deleteid(l._id)" class="btn btn-delete">Delete</button>
             </div>
         </div>
     </div>
 </div>
-
-
-
-    
-
-
- 
-
-
